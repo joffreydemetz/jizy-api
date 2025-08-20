@@ -1,0 +1,39 @@
+{
+  "name": "jizy-api",
+  "version": "2.0.0",
+  "browser": "dist/js/jizy-api.min.js",
+  "main": "lib/index.js",
+  "type": "module",
+  "files": [
+    "dist/js/jizy-api.min.js",
+    "lib/js/ajax.js",
+    "lib/js/api.js",
+    "lib/js/fetch.js",
+    "lib/index.js"
+  ],
+  "scripts": {
+    "jpack:export": "node ./cli/jpack.js -t perso",
+    "jpack:export-debug": "node ./cli/jpack.js -t perso --debug",
+    "jpack:dist": "node ./cli/jpack.js -t dist -n default",
+    "jpack:dist-debug": "node ./cli/jpack.js -t dist -n default --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joffreydemetz/jizy-api"
+  },
+  "keywords": [
+    "JiZy",
+    "Fetch",
+    "Ajax",
+    "Transport"
+  ],
+  "author": "Joffrey Demetz <joffrey.demetz@gmail.com> (https://joffreydemetz.com/)",
+  "license": "MIT",
+  "description": "A lightweight API transport library (fetch/xhr proxies)",
+  "dependencies": {
+    "jizy-packer": "^2.0.0"
+  },
+  "optionalDependencies": {
+    "jizy-messenger": "^2.0.0"
+  }
+}

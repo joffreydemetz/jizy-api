@@ -1,0 +1,19 @@
+{
+    "name": "jdz/jizy-dom",
+    "type": "library",
+    "description": "A lightweight DOM manipulation library",
+    "keywords": [
+        "JiZy",
+        "DOM"
+    ],
+    "homepage": "https://jdz.joffreydemetz.com/jizydom",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joffrey Demetz",
+            "email": "joffrey.demetz@gmail.com",
+            "homepage": "https://joffreydemetz.com",
+            "role": "Lead"
+        }
+    ]
+}
