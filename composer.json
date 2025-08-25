@@ -1,12 +1,14 @@
 {
-    "name": "jdz/jizy-dom",
+    "name": "jdz/jizy-api",
     "type": "library",
-    "description": "A lightweight DOM manipulation library",
+    "description": "A lightweight API transport library (fetch/xhr proxies)",
     "keywords": [
         "JiZy",
-        "DOM"
+        "Fetch",
+        "Ajax",
+        "Transport"
     ],
-    "homepage": "https://jdz.joffreydemetz.com/jizydom",
+    "homepage": "https://jdz.joffreydemetz.com/jfetch",
     "license": "MIT",
     "authors": [
         {

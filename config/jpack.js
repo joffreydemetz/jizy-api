@@ -1,20 +1,15 @@
-const jPackData = {
-    name: 'jFetch',
-    alias: 'jizy-api',
-    cfg: 'fetch',
-    assetsPath: 'dist',
+import { jPackConfig } from 'jizy-packer';
 
-    buildTarget: null,
-    buildZip: false,
-    buildName: 'default',
+const jPackData = function () {
+    jPackConfig.sets({
+        name: 'jFetch',
+        alias: 'jizy-api'
+    });
 
-    onCheckConfig: () => { },
-
-    onGenerateBuildJs: (code) => code,
-
-    onGenerateWrappedJs: (wrapped) => wrapped,
-
-    onPacked: () => { }
+    jPackConfig.set("onCheckConfig", () => { });
+    jPackConfig.set("onGenerateBuildJs", (code) => code);
+    jPackConfig.set("onGenerateWrappedJs", (wrapped) => wrapped);
+    jPackConfig.set("onPacked", () => { });
 };
 
 export default jPackData;
