@@ -1,15 +1,12 @@
 {
   "name": "jizy-api",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "browser": "dist/js/jizy-api.min.js",
   "main": "lib/index.js",
   "type": "module",
   "files": [
-    "dist/js/jizy-api.min.js",
-    "lib/js/ajax.js",
-    "lib/js/api.js",
-    "lib/js/fetch.js",
-    "lib/index.js"
+    "dist/*",
+    "lib/*"
   ],
   "scripts": {
     "jpack:export": "node ./cli/jpack.js --action build --name perso",
