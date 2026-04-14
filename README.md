@@ -20,19 +20,9 @@ const api = new jFetch()
 	.setUrl('https://api.example.com/data')
 	.setMethod('GET')
 	.withJson(true)
-	.withDebug(true);
-
-// Make the API call
-api.call();
-
-// Handle the response (asynchronously)
-setTimeout(() => {
-	api.response((resp) => {
-		if (resp.success) {
-			console.log('Data:', resp.data);
-		} else {
-			console.error('Error:', resp.error || resp.message);
-		}
-	});
-}, 1000);
+	.withDebug(true)
+	.setCallback(() => {
+		console.log('Callback');
+	})
+	.call();
 ```
