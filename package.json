@@ -1,9 +1,10 @@
 {
   "name": "jizy-api",
-  "version": "2.1.1",
+  "version": "2.1.6",
   "browser": "dist/js/jizy-api.min.js",
   "main": "lib/index.js",
   "type": "module",
+  "jizy": "dist/",
   "files": [
     "dist/*",
     "lib/*"
@@ -27,8 +28,8 @@
   "author": "Joffrey Demetz <joffrey.demetz@gmail.com> (https://joffreydemetz.com/)",
   "license": "MIT",
   "description": "A lightweight API transport library (fetch/xhr proxies)",
-  "dependencies": {
-    "jizy-packer": "^2.1.0"
+  "devDependencies": {
+    "jizy-packer": "^2.1.44"
   },
   "optionalDependencies": {
     "jizy-messenger": "^2.1.0"
