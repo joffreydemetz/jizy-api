@@ -28,6 +28,7 @@
   "author": "Joffrey Demetz <joffrey.demetz@gmail.com> (https://joffreydemetz.com/)",
   "license": "MIT",
   "description": "A lightweight API transport library (fetch/xhr proxies)",
+  "homepage": "https://jizy.joffreydemetz.com/api",
   "devDependencies": {
     "jizy-packer": "^2.1.44"
   },
