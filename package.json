@@ -1,6 +1,6 @@
 {
   "name": "jizy-api",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "browser": "dist/js/jizy-api.min.js",
   "main": "lib/index.js",
   "type": "module",
