@@ -1,3 +1,0 @@
-import jFetch from '{{PREFIX}}lib/js/fetch.js';
-
-export default jFetch;
