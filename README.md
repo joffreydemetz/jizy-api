@@ -2,9 +2,18 @@
 
 A lightweight API transport library — `fetch` and `XMLHttpRequest` proxies sharing a chainable API.
 
+## Install
+
+```
+npm i jizy-api
+```
+
+ESM only: the package ships its `lib/` sources (no `dist/` bundle, no browser global). Import it from
+your own bundle.
+
 ## Modules
 
-- **Api.js** — `jApi` base class. Holds the request configuration (URL, method, json, timeout, data, callback, messenger) and the response-handling pipeline (`call`, `onResponse`). Subclasses implement `transport()`.
+- **Api.js** — `jApi` base class. Holds the request configuration (URL, method, json, timeout, data, callback, messenger) and the response-handling pipeline (`call`, `onResponse`). Subclasses implement `transport()`. Named helper: `param(input)` (bracket-notation query-string serializer).
 - **Fetch.js** — `jFetch` extends `jApi` with a `fetch`-based transport. Named helpers: `appendQuery`, `buildFetchHeaders`, `buildFetchBody`, `classifyFetchError`.
 - **Ajax.js** — `jAjax` extends `jApi` with an `XMLHttpRequest`-based transport. Named helpers: `buildAjaxUrl`, `applyJsonResponse`, `classifySendError`.
 - **ApiResponse.js** — response shape produced by `onResponse` (`success`, `data`, `error`, `message`, `info`).
@@ -29,6 +38,8 @@ new jFetch()
     .call();
 ```
 
+`call()` returns the instance, not a promise: the result reaches you through the callback.
+
 ### HTTP shortcuts
 
 `get`, `post`, `put`, `patch`, `delete` configure method + `json: true` and return the instance — chain `.call()` to dispatch.
@@ -38,6 +49,9 @@ new jFetch().get('/users').call();
 new jFetch().post('/users', { timeout: 10000 }).setData({ name: 'alice' }).call();
 new jFetch().delete('/users/1').call();
 ```
+
+A shortcut first resets the configuration to its defaults (URL, method, timeout, reload timeout, json,
+messenger config, data), so call it before the other setters.
 
 ### Configuration
 
@@ -54,4 +68,21 @@ new jFetch().delete('/users/1').call();
 | `setMessenger(m)` | none | Optional [`jizy-messenger`](https://www.npmjs.com/package/jizy-messenger) instance — duck-typed on `messenger.add(message, type, config)`. |
 | `setMessengerConfig(cfg)` | `{}` | Forwarded to the messenger. |
 
-`sets({...})` accepts the same keys in one call.
+`sets({...})` sets several of them in one call; it reads the keys `url`, `method`, `timeout`,
+`reloadTimeout`, `json`, `messengerConfig`, `data` and `callback` (the messenger and debug flag have
+their own setters only).
+
+The response's `error`, `message` and `info` strings are passed to the messenger (`info` with
+`dismissible: false, persistant: false, timeout: 3`). Without a messenger they fall back to `alert()`.
+
+## Tests
+
+```
+npm test
+```
+
+Jest, run in ESM mode (`node --experimental-vm-modules`).
+
+## License
+
+MIT — see [LICENSE](LICENSE).
