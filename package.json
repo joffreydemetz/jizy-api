@@ -1,6 +1,6 @@
 {
   "name": "jizy-api",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "main": "lib/index.js",
   "type": "module",
   "author": "Joffrey Demetz <joffrey.demetz@gmail.com> (https://joffreydemetz.com/)",
